@@ -5,6 +5,7 @@ import Login from "./Pages/Login/Login";
 import Registration from "./Pages/Registration/Registration";
 import Footer from "./Pages/Shared/Footer";
 import Navbar from "./Pages/Shared/Navbar";
+import PageNotFound from "./Pages/Shared/PageNotFound";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/registration" element={<Registration />} />
+        <Route path="/*" element={<PageNotFound />} />
       </Routes>
       <Footer />
     </>
