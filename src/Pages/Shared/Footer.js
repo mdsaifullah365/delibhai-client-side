@@ -67,13 +67,13 @@ const Footer = () => {
       </div>
 
       {/* Second Part */}
-      <div class="footer max-w-4xl px-10 py-5 mx-auto items-center text-black">
-        <div class="items-center grid-flow-col">
+      <div className="footer max-w-4xl px-10 py-5 mx-auto items-center text-black">
+        <div className="items-center grid-flow-col">
           <p className="text-xl">
             © {new Date().getFullYear()} Delibhai. All Right Reserved.
           </p>
         </div>
-        <div class="grid-flow-col gap-4 md:place-self-center md:justify-self-end"></div>
+        <div className="grid-flow-col gap-4 md:place-self-center md:justify-self-end"></div>
       </div>
     </footer>
   );

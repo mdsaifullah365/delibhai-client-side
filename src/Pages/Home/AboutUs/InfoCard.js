@@ -1,7 +1,7 @@
 import React from "react";
 
 const InfoCard = ({ info }) => {
-  const { id, title, quantity } = info;
+  const { title, quantity } = info;
   return (
     <div className="border border-[#dddddd] rounded-lg px-7 py-8 relative text-center">
       {/* Title and Description */}

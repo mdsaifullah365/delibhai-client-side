@@ -38,12 +38,12 @@ const Navbar = () => {
   );
 
   return (
-    <header className="bg-base-100">
+    <header className="bg-base-100 sticky top-0 shadow-md z-50">
       <div className="container flex justify-between items-center h-20 sm:h-24">
         <div className="flex items-center gap-5">
           <div className="dropdown">
             <label
-              tabindex="0"
+              tabIndex="0"
               onClick={toggleDropdown}
               className="btn btn-ghost lg:hidden"
             >
@@ -55,15 +55,15 @@ const Navbar = () => {
                 stroke="currentColor"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d="M4 6h16M4 12h8m-8 6h16"
                 />
               </svg>
             </label>
             <ul
-              tabindex="0"
+              tabIndex="0"
               className={`${
                 showDropdown && "hidden"
               } menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52`}
