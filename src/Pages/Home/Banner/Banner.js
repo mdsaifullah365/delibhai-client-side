@@ -11,7 +11,7 @@ const Banner = () => {
       <div className="relative z-20">
         <div className="container min-h-[calc(100vh-80px)] sm:min-h-[calc(100vh-96px)] lg:h-[calc(100vh-96px)]  grid grid-cols-1 lg:grid-cols-2 items-center gap-5 lg:gap-16">
           <div className="text-center lg:text-left my-5">
-            <h1 className="banner-heading text-4xl sm:text-6xl xl:text-7xl font-bold mb-4">
+            <h1 className="heading text-4xl sm:text-6xl xl:text-7xl font-bold mb-4">
               দেশের নাম্বার ওয়ান ডেলিভারি সার্ভিস
             </h1>
 
