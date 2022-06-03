@@ -73,7 +73,7 @@ const Registration = () => {
   }
 
   return (
-    <div className="flex justify-center items-center my-5">
+    <div className="min-h-[calc(100vh-80px)] sm:min-h-[calc(100vh-96px)] flex justify-center items-center my-5">
       <div className="flex flex-col w-full max-w-md shadow-2xl p-8">
         <h2 className="text-center text-4xl font-semibold mb-10">
           রেজিস্ট্রেশন করুন
