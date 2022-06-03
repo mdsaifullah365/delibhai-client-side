@@ -38,7 +38,7 @@ const Navbar = () => {
   );
 
   return (
-    <header className="bg-base-100 sticky top-0 shadow-md z-50">
+    <header className="bg-base-100 sticky top-0 shadow-sm z-50">
       <div className="container flex justify-between items-center h-20 sm:h-24">
         <div className="flex items-center gap-5">
           <div className="dropdown">
