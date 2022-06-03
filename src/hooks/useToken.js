@@ -1,12 +1,30 @@
 import { useEffect, useState } from "react";
 const useToken = (user) => {
   const [token, setToken] = useState("");
+
+  console.log(user);
+  const email = user?.user?.email;
+  const displayName = user?.user?.displayName;
+  const firstName = user?._tokenResponse?.firstName;
+  const lastName = user?._tokenResponse?.lastName;
+  const emailVerified = user?.user?.emailVerified;
+  const photoURL = user?.user?.photoURL;
+  const phoneNumber = user?.user?.phoneNumber;
+
   useEffect(() => {
-    const email = user?.user?.email;
-    const userInfo = { email: email };
+    const userInfo = {
+      email,
+      displayName,
+      firstName,
+      lastName,
+      emailVerified,
+      photoURL,
+      phoneNumber,
+    };
+
     if (email) {
-      fetch(`http://localhost:5000/user/${email}`, {
-        method: "POST",
+      fetch(`https://delibhai.herokuapp.com/user/${email}`, {
+        method: "PUT",
         headers: {
           "Content-Type": "application/json",
         },
@@ -19,7 +37,15 @@ const useToken = (user) => {
           setToken(accessToken);
         });
     }
-  }, [user?.user?.email]);
+  }, [
+    email,
+    displayName,
+    firstName,
+    lastName,
+    emailVerified,
+    photoURL,
+    phoneNumber,
+  ]);
 
   return [token];
 };
