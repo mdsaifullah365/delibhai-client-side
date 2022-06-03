@@ -1,4 +1,5 @@
 import React from "react";
+import AboutUs from "./AboutUs/AboutUs";
 import Banner from "./Banner/Banner";
 import DeliveryImages from "./DeliveryImages/DeliveryImages";
 import Income from "./Income/Income";
@@ -13,6 +14,7 @@ const Home = () => {
       <Services />
       <DeliveryImages />
       <Income />
+      <AboutUs />
     </main>
   );
 };
