@@ -1,11 +1,11 @@
 module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {},
     container: {
       center: true,
       padding: {
-        DEFAULT: "1.5rem",
+        DEFAULT: '1.5rem',
       },
     },
   },
@@ -13,14 +13,14 @@ module.exports = {
     themes: [
       {
         mytheme: {
-          primary: "#00C795",
-          secondary: "#13EBB4",
-          accent: "#707070",
-          neutral: "#D9D9D9",
-          "base-100": "#ffffff",
+          primary: '#00C795',
+          secondary: '#13EBB4',
+          accent: '#707070',
+          neutral: '#D9D9D9',
+          'base-100': '#ffffff',
         },
       },
     ],
   },
-  plugins: [require("daisyui")],
+  plugins: [require('daisyui'), require('ps-scrollbar-tailwind')],
 };
