@@ -6,10 +6,10 @@ import "../../../App.css";
 
 const Banner = () => {
   return (
-    <section className="relative min-h-[calc(100vh-80px)] sm:min-h-[calc(100vh-96px)] lg:h-[calc(100vh-96px)]">
+    <section className="relative">
       <div className="absolute bg-neutral opacity-20 top-0 bottom-0 left-0 right-0 z-10"></div>
       <div className="relative z-20">
-        <div className="container min-h-[calc(100vh-80px)] sm:min-h-[calc(100vh-96px)] lg:h-[calc(100vh-96px)]  grid grid-cols-1 lg:grid-cols-2 items-center gap-5 lg:gap-16">
+        <div className="container grid grid-cols-1 lg:grid-cols-2 items-center gap-5 lg:gap-16">
           <div className="text-center lg:text-left my-5">
             <h1 className="heading text-4xl sm:text-6xl xl:text-7xl font-bold mb-4">
               দেশের নাম্বার ওয়ান ডেলিভারি সার্ভিস
@@ -32,8 +32,8 @@ const Banner = () => {
               </Link>
             </div>
           </div>
-          <div className="h-full lg:h-[calc(100vh-96px)] flex justify-center lg:justify-start items-end order-first lg:order-last pt-10">
-            <img src={man} alt="" className="block h-full" />
+          <div className="flex justify-center lg:justify-start items-end order-first lg:order-last pt-10">
+            <img src={man} alt="DeliBhai Hero" />
           </div>
         </div>
       </div>
