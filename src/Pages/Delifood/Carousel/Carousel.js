@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { AiFillClockCircle } from "react-icons/ai";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import playstore from "../../../images/playsore.jpg";
 const Carousel = () => {
   const [slideIndex, setSlideIndex] = useState(1);
-
-  const slides = [
+  const slides = useMemo(() => [
     {
       id: 1,
       img: "https://i.ibb.co/SJydHfP/delifood-banner-1.jpg",
@@ -23,18 +22,20 @@ const Carousel = () => {
       time: "ওপেনিং টাইম: সকাল ৯ টা থেকে রাত ১১ টা",
       location: "কবির চৌধুরী মার্কেট, হেয়াকো বাজার, ভূজপুর, চট্টগ্রাম",
     },
-  ];
+  ]);
   const moveDot = (index) => {
     setSlideIndex(index);
   };
-
-  setInterval(() => {
-    if (slideIndex !== slides.length) {
-      setSlideIndex(slideIndex + 1);
-    } else {
-      setSlideIndex(1);
-    }
-  }, 5000);
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      if (slideIndex !== slides.length) {
+        setSlideIndex(slideIndex + 1);
+      } else {
+        setSlideIndex(1);
+      }
+    }, 5000);
+    return () => clearInterval(intervalId);
+  }, [slideIndex, slides]);
 
   return (
     <div className="h-[56vw] lg:h-[calc(100vh-96px)] relative overflow-hidden bg-[#010101]">
