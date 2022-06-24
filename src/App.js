@@ -21,7 +21,7 @@ function App() {
         <Route path="/registration" element={<Registration />} />
         <Route path="/admin-dashboard" element={<Dashboard />} />
         <Route path="/services/delifood" element={<Delifood />}>
-          <Route path=":item" element={<Items />} />
+          <Route path=":category" element={<Items />} />
         </Route>
         <Route path="/*" element={<PageNotFound />} />
       </Routes>

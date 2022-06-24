@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
-import { Outlet } from "react-router-dom";
 import Carousel from "./Carousel/Carousel";
+import Items from "./Items/Items";
 import Navmenu from "./Navmenu/Navmenu";
 import ToogleView from "./ToogleView/ToogleView";
 
@@ -12,7 +12,7 @@ const Delifood = () => {
       <Carousel />
       <Navmenu />
       <ToogleView gridView={gridView} setGridView={setGridView} />
-      <Outlet />
+      <Items gridView={gridView} />
     </>
   );
 };
