@@ -1,4 +1,5 @@
 import React from "react";
+import OrderButton from "./OrderButton/OrderButton";
 
 const Items = ({ gridView }) => {
   return (
@@ -12,6 +13,7 @@ const Items = ({ gridView }) => {
         <div className="w-full h-20 bg-[#bebebe]"></div>
         <div className="w-full h-20 bg-[#bebebe]"></div>
       </div>
+      <OrderButton />
     </div>
   );
 };
