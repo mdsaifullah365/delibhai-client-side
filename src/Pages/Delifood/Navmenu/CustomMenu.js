@@ -4,7 +4,6 @@ import { Link, useMatch, useResolvedPath } from "react-router-dom";
 const CustomMenu = ({ children, to, color, ...props }) => {
   let resolved = useResolvedPath(to);
   let match = useMatch({ path: resolved.pathname, end: true });
-  console.log(color);
 
   return (
     <li
