@@ -41,7 +41,7 @@ const Carousel = () => {
   }, [slideIndex, slides]);
 
   return (
-    <div className="h-[56vw] lg:h-[calc(100vh-96px)] relative overflow-hidden bg-[#010101]">
+    <div className="h-[56vw] lg:max-h-[calc(100vh-175px)] relative overflow-hidden bg-[#010101]">
       {slides.map((slide) => {
         return (
           <div
