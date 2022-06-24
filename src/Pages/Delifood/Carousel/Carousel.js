@@ -4,25 +4,28 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 import playstore from "../../../images/playsore.jpg";
 const Carousel = () => {
   const [slideIndex, setSlideIndex] = useState(1);
-  const slides = useMemo(() => [
-    {
-      id: 1,
-      img: "https://i.ibb.co/SJydHfP/delifood-banner-1.jpg",
-    },
-    {
-      id: 2,
-      img: "https://i.ibb.co/Hgpzrsp/delifood-banner-2.jpg",
-      time: "ওপেনিং টাইম: সকাল ৯ টা থেকে রাত ১১ টা",
-      location: "কবির চৌধুরী মার্কেট, হেয়াকো বাজার, ভূজপুর, চট্টগ্রাম",
-    },
-    {
-      id: 3,
-      ad: "ডাউনলোড করুন আমাদের মোবাইল এপস্",
-      app: "sfdf",
-      time: "ওপেনিং টাইম: সকাল ৯ টা থেকে রাত ১১ টা",
-      location: "কবির চৌধুরী মার্কেট, হেয়াকো বাজার, ভূজপুর, চট্টগ্রাম",
-    },
-  ]);
+  const slides = useMemo(
+    () => [
+      {
+        id: 1,
+        img: "https://i.ibb.co/SJydHfP/delifood-banner-1.jpg",
+      },
+      {
+        id: 2,
+        img: "https://i.ibb.co/Hgpzrsp/delifood-banner-2.jpg",
+        time: "ওপেনিং টাইম: সকাল ৯ টা থেকে রাত ১১ টা",
+        location: "কবির চৌধুরী মার্কেট, হেয়াকো বাজার, ভূজপুর, চট্টগ্রাম",
+      },
+      {
+        id: 3,
+        ad: "ডাউনলোড করুন আমাদের মোবাইল এপস্",
+        app: "sfdf",
+        time: "ওপেনিং টাইম: সকাল ৯ টা থেকে রাত ১১ টা",
+        location: "কবির চৌধুরী মার্কেট, হেয়াকো বাজার, ভূজপুর, চট্টগ্রাম",
+      },
+    ],
+    []
+  );
   const moveDot = (index) => {
     setSlideIndex(index);
   };
