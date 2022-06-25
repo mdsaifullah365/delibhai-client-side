@@ -18,6 +18,7 @@ const ItemDetails = () => {
   };
   const { name, img1, img2, video, price, available, categories, description } =
     item;
+  console.log(available, categories, description, id);
   return (
     <>
       <ItemCarousel
