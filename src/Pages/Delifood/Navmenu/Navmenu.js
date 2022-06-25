@@ -35,7 +35,7 @@ const Navmenu = () => {
     },
   ];
   return (
-    <nav className='mt-4 pt-2 mb-[-2px] h-14 overflow-y-hidden bg-white sticky top-12 z-50'>
+    <nav className='mt-4 pt-2 mb-[-2px] h-14 overflow-y-hidden bg-white sticky top-12 sm:top-24 z-50'>
       <ul className='container flex gap-3 list-none flex-nowrap overflow-x-scroll whitespace-nowrap overflow-y-hidden pb-7 md:justify-center'>
         {menu.map((m) => (
           <CustomMenu key={m.id} to={m.to} color={m.color.toLowerCase()}>
