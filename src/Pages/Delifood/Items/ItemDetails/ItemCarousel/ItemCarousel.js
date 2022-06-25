@@ -15,6 +15,10 @@ const ItemCarousel = ({ img1, img2, video, price, name }) => {
     setId(getYouTubeID(video));
   }, [video]);
 
+  const onPlayerReady = (event) => {
+    // access to player in all event handlers via event.target
+    event.target.pauseVideo();
+  };
   const opts = {
     height: '100%',
     width: '100%',
@@ -25,8 +29,11 @@ const ItemCarousel = ({ img1, img2, video, price, name }) => {
       disablekb: 1,
       fs: 0,
       modestbranding: 1,
+      enablejsapi: 1,
+      origin: 'https://www.delibhai.com',
     },
   };
+
   return (
     <div className='shadow-3xl rounded-b-[2.6666666vw] overflow-hidden  '>
       <Swiper
@@ -83,7 +90,12 @@ const ItemCarousel = ({ img1, img2, video, price, name }) => {
         </SwiperSlide>
         <SwiperSlide>
           <div className='w-full h-[54vw] lg:max-h-[calc(100vh-175px)]'>
-            <YouTube className='w-full h-full' videoId={id} opts={opts} />
+            <YouTube
+              className='w-full h-full'
+              videoId={id}
+              opts={opts}
+              onReady={onPlayerReady}
+            />
           </div>
         </SwiperSlide>
       </Swiper>
