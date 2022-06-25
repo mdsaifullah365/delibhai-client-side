@@ -1,9 +1,9 @@
-import React from "react";
-import { useState } from "react";
-import Carousel from "./Carousel/Carousel";
-import Items from "./Items/Items";
-import Navmenu from "./Navmenu/Navmenu";
-import ToogleView from "./ToogleView/ToogleView";
+import React from 'react';
+import { useState } from 'react';
+import Carousel from './Carousel/Carousel';
+import Items from './Items/Items';
+import Navmenu from './Navmenu/Navmenu';
+import ToggleView from './ToggleView/ToggleView';
 
 const Delifood = () => {
   const [gridView, setGridView] = useState(true);
@@ -11,7 +11,7 @@ const Delifood = () => {
     <>
       <Carousel />
       <Navmenu />
-      <ToogleView gridView={gridView} setGridView={setGridView} />
+      <ToggleView gridView={gridView} setGridView={setGridView} />
       <Items gridView={gridView} />
     </>
   );
