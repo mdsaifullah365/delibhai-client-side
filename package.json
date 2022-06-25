@@ -10,6 +10,7 @@
     "daisyui": "^2.15.2",
     "flowbite": "^1.4.7",
     "flowbite-react": "^0.0.27",
+    "get-youtube-id": "^1.0.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-firebase-hooks": "^5.0.3",
@@ -18,8 +19,10 @@
     "react-query": "^3.39.1",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
+    "react-youtube": "^9.0.2",
     "simplebar": "^5.3.8",
     "simplebar-react": "^2.4.1",
+    "swiper": "^8.2.4",
     "web-vitals": "^2.1.4",
     "yup": "^0.32.11"
   },
