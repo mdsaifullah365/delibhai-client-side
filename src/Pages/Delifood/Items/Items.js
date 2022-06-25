@@ -15,8 +15,8 @@ const Items = ({ gridView }) => {
   return (
     <div className='container'>
       <div
-        className={`grid gap-x-[4vw] gap-y-[5.333333vw] ${
-          gridView ? 'grid-cols-2' : 'grid-cols-1'
+        className={`grid gap-x-[4vw] lg:gap-x-[2vw] gap-y-[5.333333vw] lg:gap-y-[2.6666vw] ${
+          gridView ? 'grid-cols-2 lg:grid-cols-4' : 'grid-cols-1'
         }`}>
         {items?.map((item) => (
           <ItemCard key={item._id} item={item} />
