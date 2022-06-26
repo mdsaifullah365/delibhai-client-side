@@ -3,10 +3,13 @@ import OrderButton from './OrderButton/OrderButton';
 import { useQuery } from 'react-query';
 import Loading from '../../Shared/Loading';
 import ItemCard from './ItemCard';
+import { useLocation } from 'react-router-dom';
 
 const Items = ({ gridView }) => {
-  const url = `https://delibhai.herokuapp.com/item`;
-  const { data: items, isLoading } = useQuery('items', () =>
+  const location = useLocation();
+  const path = location.pathname;
+  const url = `http://localhost:5000${path}`;
+  const { data: items, isLoading } = useQuery(['items', path], () =>
     fetch(url).then((res) => res.json())
   );
   if (isLoading) {
