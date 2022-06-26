@@ -1,6 +1,8 @@
 import React from 'react';
+import { useQuery } from 'react-query';
 
 import { useParams } from 'react-router-dom';
+import Loading from '../../../Shared/Loading';
 import OrderButton from '../OrderButton/OrderButton';
 import ItemCarousel from './ItemCarousel/ItemCarousel';
 import ItemDescription from './ItemDescription/ItemDescription';
@@ -8,20 +10,15 @@ import SocialLinks from './SocialLinks/SocialLinks';
 
 const ItemDetails = () => {
   const { id } = useParams();
-  const item = {
-    name: 'শরবতে মহব্বত',
-    img1: 'https://i.ibb.co/k3pgZQX/demo-item-1.jpg',
-    img2: 'https://i.ibb.co/SJydHfP/delifood-banner-1.jpg',
-    video: 'https://www.youtube.com/shorts/_HgpFMdZ16c',
-    price: '৬০',
-    available: true,
-    categories: 'snacks, evening-snacks',
-    description:
-      'এমন অনেক কিছুই হবে, যা কেউ ভাবেনি আগে ভারতের বিখ্যাত ভাইরাল রেসিপিতে তৈরী #শরবতে_মোহব্বত এখন delifoodএ সন্ধ্যা হলেই মুখরুচক খাবারের খোঁজে যারা হন্নে হয়ে যান তাদের জন্য delifood   এর বিশেষ আয়োজন ডিম_চিতই সুটকি,পেঁয়াজ,আলুর টকটকে ভাজি অথবা রসালো আলু হাড্ডির ঝোল খাবারের কম্বিনেশনে চলে আমাদের এ আপ্পায়ন. একটা খেলে নিজের সাথে নিজেই প্রতিযোগিতা শুরু করবেন. এমন অনেক কিছুই হবে, যা কেউ ভাবেনি আগে ভারতের বিখ্যাত ভাইরাল রেসিপিতে তৈরী #শরবতে_মোহব্বত এখন delifoodএ সন্ধ্যা হলেই মুখরুচক খাবারের খোঁজে যারা হন্নে হয়ে যান তাদের জন্য delifood   এর বিশেষ আয়োজন ডিম_চিতই সুটকি,পেঁয়াজ,আলুর টকটকে ভাজি অথবা রসালো আলু হাড্ডির ঝোল খাবারের কম্বিনেশনে চলে আমাদের এ আপ্পায়ন. একটা খেলে নিজের সাথে নিজেই প্রতিযোগিতা শুরু করবেন. এমন অনেক কিছুই হবে, যা কেউ ভাবেনি আগে ভারতের বিখ্যাত ভাইরাল রেসিপিতে তৈরী #শরবতে_মোহব্বত এখন delifoodএ সন্ধ্যা হলেই মুখরুচক খাবারের খোঁজে যারা হন্নে হয়ে যান তাদের জন্য delifood   এর বিশেষ আয়োজন ডিম_চিতই সুটকি,পেঁয়াজ,আলুর টকটকে ভাজি অথবা রসালো আলু হাড্ডির ঝোল খাবারের কম্বিনেশনে চলে আমাদের এ আপ্পায়ন. একটা খেলে নিজের সাথে নিজেই প্রতিযোগিতা শুরু করবেন. ',
-  };
-  const { name, img1, img2, video, price, available, categories, description } =
-    item;
-  console.log(available, categories, id);
+  const url = `https://delibhai.herokuapp.com/item/${id}`;
+  const { data: item, isLoading } = useQuery(['item', id], () =>
+    fetch(url).then((res) => res.json())
+  );
+  if (isLoading) {
+    return <Loading />;
+  }
+
+  const { name, img1, img2, video, price, description } = item;
   return (
     <div className='pb-4 mb-12 lg:pb-0 lg:mb-0'>
       <ItemCarousel

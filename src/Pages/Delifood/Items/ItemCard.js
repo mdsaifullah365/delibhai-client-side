@@ -2,14 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const ItemCard = ({ item }) => {
-  const { _id, img, price, available, name } = item;
+  const { _id, img1, price, available, name } = item;
   return (
     // Background Image
     <Link to={`/services/delifood/item/${_id}`}>
       <div
         key={_id}
         style={{
-          background: `url('${img}')`,
+          background: `url('${img1}')`,
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
           backgroundSize: 'cover',
