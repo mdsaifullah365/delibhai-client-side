@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { useParams } from 'react-router-dom';
+import OrderButton from '../OrderButton/OrderButton';
 import ItemCarousel from './ItemCarousel/ItemCarousel';
 
 const ItemDetails = () => {
@@ -28,6 +29,7 @@ const ItemDetails = () => {
         price={price}
         name={name}
       />
+      <OrderButton />
     </>
   );
 };
