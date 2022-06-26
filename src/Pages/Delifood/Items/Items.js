@@ -15,7 +15,7 @@ const Items = ({ gridView }) => {
   return (
     <div className='container'>
       <div
-        className={`grid gap-x-[4vw] lg:gap-x-[2vw] gap-y-[5.333333vw] lg:gap-y-[2.6666vw] ${
+        className={`grid gap-x-[4vw] lg:gap-x-[2vw] gap-y-[5.333333vw] lg:gap-y-[2.6666vw] pb-16 mb-4 ${
           gridView ? 'grid-cols-2 lg:grid-cols-4' : 'grid-cols-1'
         }`}>
         {items?.map((item) => (
