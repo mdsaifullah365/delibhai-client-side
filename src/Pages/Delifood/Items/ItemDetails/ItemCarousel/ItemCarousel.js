@@ -40,6 +40,7 @@ const ItemCarousel = ({ img1, img2, video, price, name }) => {
         className='mySwiper'
         autoplay={{
           delay: 5000,
+          // disableOnInteraction: true,
           pauseOnMouseEnter: true,
         }}
         effect={'creative'}
@@ -89,7 +90,7 @@ const ItemCarousel = ({ img1, img2, video, price, name }) => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className='w-full h-[54vw] lg:max-h-[calc(100vh-175px)]'>
+          <div className='relative w-full h-[54vw] lg:max-h-[calc(100vh-175px)]'>
             <YouTube
               className='w-full h-full'
               videoId={id}
@@ -97,6 +98,15 @@ const ItemCarousel = ({ img1, img2, video, price, name }) => {
               onReady={onPlayerReady}
             />
           </div>
+          {/* Dark Overlay */}
+          <div
+            className={`absolute h-[40%] right-0 bottom-0 left-0 opacity-0`}></div>
+          <div
+            className={`absolute h-[40%] right-0 top-0 left-0 opacity-0`}></div>
+          <div
+            className={`absolute w-[40%] right-0 top-0 bottom-0 opacity-0`}></div>
+          <div
+            className={`absolute w-[40%] left-0 top-0 bottom-0 opacity-0`}></div>
         </SwiperSlide>
       </Swiper>
     </div>
