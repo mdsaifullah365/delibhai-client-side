@@ -8,7 +8,7 @@ import { useLocation } from 'react-router-dom';
 const Items = ({ gridView }) => {
   const location = useLocation();
   const path = location.pathname;
-  const url = `http://localhost:5000${path}`;
+  const url = `https://delibhai.herokuapp.com${path}`;
   const { data: items, isLoading } = useQuery(['items', path], () =>
     fetch(url).then((res) => res.json())
   );
