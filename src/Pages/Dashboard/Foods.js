@@ -17,7 +17,7 @@ const Foods = () => {
   return (
     <div className='overflow-x-auto w-full'>
       <table className='table w-full'>
-        <thead>
+        <thead className='sticky top-0'>
           <tr>
             <th>নাম</th>
             <th>শর্ট ডিস্ক্রিপশন</th>
