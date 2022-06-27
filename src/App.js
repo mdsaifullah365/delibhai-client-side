@@ -14,6 +14,7 @@ import Navbar from './Pages/Shared/Navbar';
 import PageNotFound from './Pages/Shared/PageNotFound';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Foods from './Pages/Dashboard/Foods';
 
 function App() {
   const path = useLocation().pathname;
@@ -27,6 +28,7 @@ function App() {
         <Route path='/admin-dashboard' element={<Dashboard />}>
           <Route index element={<DashboardHome />} />
           <Route path='add-item' element={<AddItem />} />
+          <Route path='delifood' element={<Foods />} />
         </Route>
         <Route path='/services/delifood' element={<Delifood />}>
           <Route path=':category' element={<Items />} />
