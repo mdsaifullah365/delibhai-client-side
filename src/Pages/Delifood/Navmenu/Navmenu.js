@@ -1,45 +1,25 @@
 import React from 'react';
+import { useEffect } from 'react';
+import { useState } from 'react';
 import CustomMenu from './CustomMenu';
 
 const Navmenu = () => {
-  const menu = [
-    {
-      id: 1,
-      to: '/services/delifood',
-      text: 'এখন পাবেন',
-      color: '010101',
-    },
-    {
-      id: 2,
-      to: '/services/delifood/snacks',
-      text: 'নাস্তা',
-      color: '7B1AB5',
-    },
-    {
-      id: 3,
-      to: '/services/delifood/lunch',
-      text: 'দুপুরের খাবার',
-      color: 'F8A856',
-    },
-    {
-      id: 4,
-      to: '/services/delifood/evening-snacks',
-      text: 'সন্ধার নাস্তা',
-      color: '00C797',
-    },
-    {
-      id: 5,
-      to: '/services/delifood/juice',
-      text: 'জুস',
-      color: 'FF31A6',
-    },
-  ];
+  const [menu, setMenu] = useState([]);
+  useEffect(() => {
+    const url = `https://delibhai.herokuapp.com/delifood/category`;
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => setMenu(data));
+  }, []);
   return (
     <nav className='mt-4 pt-2 mb-[-2px] h-14 overflow-y-hidden bg-white sticky top-12 sm:top-24 z-50'>
       <ul className='container flex gap-3 list-none flex-nowrap overflow-x-scroll whitespace-nowrap overflow-y-hidden pb-7 md:justify-center'>
+        <CustomMenu key='available' to='' color={'000000'}>
+          এখন পাবেন
+        </CustomMenu>
         {menu.map((m) => (
-          <CustomMenu key={m.id} to={m.to} color={m.color.toLowerCase()}>
-            {m.text}
+          <CustomMenu key={m._id} to={m.english} color={m.color.toLowerCase()}>
+            {m.bangla}
           </CustomMenu>
         ))}
       </ul>
