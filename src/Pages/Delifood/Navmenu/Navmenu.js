@@ -18,8 +18,8 @@ const Navmenu = () => {
           এখন পাবেন
         </CustomMenu>
         {menu.map((m) => (
-          <CustomMenu key={m._id} to={m.english} color={m.color.toLowerCase()}>
-            {m.bangla}
+          <CustomMenu key={m._id} to={m.value} color={m.color.toLowerCase()}>
+            {m.label}
           </CustomMenu>
         ))}
       </ul>
