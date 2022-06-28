@@ -1,13 +1,7 @@
 import React from 'react';
 import { RiDeleteBin6Fill } from 'react-icons/ri';
 import { BsToggle2Off, BsToggle2On } from 'react-icons/bs';
-const ItemRow = ({
-  item,
-  refetch,
-  email,
-  setAvailabilityModal,
-  setRemoveModal,
-}) => {
+const ItemRow = ({ item, setRemoveModal, setAvailabilityModal }) => {
   const { name, available, description, img1, price, categories } = item;
 
   return (

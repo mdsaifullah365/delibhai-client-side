@@ -6,7 +6,7 @@ const RemoveItemModal = ({ item, refetch, email, setRemoveModal }) => {
   const handleRemoveItem = (id) => {
     const url = `https://delibhai.herokuapp.com/admin/delifood/${id}?email=${email}`;
     fetch(url, {
-      method: 'PUT',
+      method: 'DELET',
       headers: {
         authorization: `Bearer ${sessionStorage.getItem('adminAccessToken')}`,
       },

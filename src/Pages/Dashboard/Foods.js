@@ -45,8 +45,6 @@ const Foods = () => {
             <ItemRow
               key={item._id}
               item={item}
-              refetch={refetch}
-              email={user?.email}
               setRemoveModal={setRemoveModal}
               setAvailabilityModal={setAvailabilityModal}
             />
