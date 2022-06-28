@@ -6,12 +6,19 @@ const RemoveItemModal = ({ item, refetch, email, setRemoveModal }) => {
   // Remove an Item
   const handleRemoveItem = (id) => {
     const url = `https://delibhai.herokuapp.com/admin/delifood/${id}?email=${email}`;
-    axios.delete(url).then((res) => {
-      if (res.data.deletedCount === 1) {
-        refetch();
-        setRemoveModal(null);
-      }
-    });
+    fetch(url, {
+      method: 'PUT',
+      headers: {
+        authorization: `Bearer ${sessionStorage.getItem('adminAccessToken')}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.deletedCount === 1) {
+          refetch();
+          setRemoveModal(null);
+        }
+      });
   };
   return (
     <div>
