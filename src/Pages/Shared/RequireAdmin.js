@@ -10,11 +10,22 @@ const RequireAdmin = ({ children }) => {
   const [user, loading] = useAuthState(auth);
   const [admin, adminLoading] = useAdmin(user);
 
-  if (loading || adminLoading) {
+  if (loading) {
     return <Loading />;
   }
-  console.log(admin);
-  if (!admin) {
+  if (!user) {
+    return (
+      <Navigate
+        to='/admin-dashboard/login'
+        state={{ from: location }}
+        replace
+      />
+    );
+  }
+  if (adminLoading) {
+    return <Loading />;
+  }
+  if (!user || !admin) {
     return (
       <Navigate
         to='/admin-dashboard/login'
