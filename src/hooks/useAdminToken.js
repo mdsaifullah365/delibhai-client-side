@@ -3,16 +3,14 @@ const useAdminToken = (user) => {
   const [token, setToken] = useState('');
 
   const email = user?.user?.email;
-  console.log(email);
   useEffect(() => {
     if (email) {
-      fetch(`https://delibhai.herokuapp.com/admin/${email}`)
+      fetch(`https://delibhai.herokuapp.com/user/${email}`)
         .then((res) => res.json())
         .then((data) => {
           const accessToken = data.token;
-          localStorage.setItem('adminAccessToken', accessToken);
+          sessionStorage.setItem('adminAccessToken', accessToken);
           setToken(accessToken);
-          console.log(accessToken);
         })
         .catch((err) => {
           console.log(err);

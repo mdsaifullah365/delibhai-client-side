@@ -10,7 +10,7 @@ const Foods = () => {
     isLoading,
     refetch,
   } = useQuery('allItems', () => fetch(url).then((res) => res.json()));
-  console.log(items);
+
   if (isLoading) {
     return <Loading />;
   }
@@ -27,7 +27,7 @@ const Foods = () => {
           </tr>
         </thead>
         <tbody>
-          {items?.map((item) => (
+          {items.map((item) => (
             <ItemRow key={item._id} item={item} refetch={refetch} />
           ))}
         </tbody>
