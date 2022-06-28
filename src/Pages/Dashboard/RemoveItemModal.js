@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 
 const RemoveItemModal = ({ item, refetch, email, setRemoveModal }) => {
   const { _id, img1, name, price } = item;
