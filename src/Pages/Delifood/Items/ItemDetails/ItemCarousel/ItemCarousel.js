@@ -39,7 +39,7 @@ const ItemCarousel = ({ img1, img2, video, price, name }) => {
       <Swiper
         className='mySwiper'
         autoplay={{
-          delay: 5000,
+          delay: 2000,
           // disableOnInteraction: true,
           pauseOnMouseEnter: true,
         }}
