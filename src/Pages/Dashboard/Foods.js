@@ -4,9 +4,14 @@ import { useQuery } from 'react-query';
 import ItemRow from './ItemRow';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import RemoveItemModal from './RemoveItemModal';
+import { useState } from 'react';
+import ChangeAvailabilityModal from './ChangeAvailabilityModal';
 
 const Foods = () => {
   const [user, loading] = useAuthState(auth);
+  const [removeModal, setRemoveModal] = useState(null);
+  const [availabilityModal, setAvailabilityModal] = useState(null);
   const url = `https://delibhai.herokuapp.com/admin/delifood?email=${user?.email}`;
   const {
     data: items,
@@ -42,10 +47,30 @@ const Foods = () => {
               item={item}
               refetch={refetch}
               email={user?.email}
+              setRemoveModal={setRemoveModal}
+              setAvailabilityModal={setAvailabilityModal}
             />
           ))}
         </tbody>
       </table>
+      {/* Remove Item Modal */}
+      {removeModal && (
+        <RemoveItemModal
+          item={removeModal}
+          refetch={refetch}
+          setRemoveModal={setRemoveModal}
+          email={user?.email}
+        />
+      )}
+      {/* Change Availability Modal */}
+      {availabilityModal && (
+        <ChangeAvailabilityModal
+          item={availabilityModal}
+          refetch={refetch}
+          setAvailabilityModal={setAvailabilityModal}
+          email={user?.email}
+        />
+      )}
     </div>
   );
 };
