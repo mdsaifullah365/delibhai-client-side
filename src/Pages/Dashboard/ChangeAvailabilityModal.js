@@ -11,12 +11,19 @@ const ChangeAvailabilityModal = ({
   // Change Availability
   const handleAvailability = (id) => {
     const url = `https://delibhai.herokuapp.com/admin/delifood/${id}?email=${email}`;
-    axios.put(url).then((res) => {
-      if (res.data.modifiedCount === 1) {
-        refetch();
-        setAvailabilityModal(null);
-      }
-    });
+    fetch(url, {
+      method: 'PUT',
+      headers: {
+        authorization: `Bearer ${sessionStorage.getItem('adminAccessToken')}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.modifiedCount === 1) {
+          refetch();
+          setAvailabilityModal(null);
+        }
+      });
   };
   return (
     <div>
