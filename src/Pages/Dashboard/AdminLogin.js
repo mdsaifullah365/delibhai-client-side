@@ -64,7 +64,7 @@ const AdminLogin = () => {
         {signInError}
 
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className='form-control w-full'>
+          <div className='form-control w-full mb-3'>
             <input
               type='text'
               placeholder='Admin Email'
@@ -89,7 +89,7 @@ const AdminLogin = () => {
           <input
             type='submit'
             value='Login'
-            className='btn btn-primary text-base-100 w-full mt-5 mb-2'
+            className='btn btn-primary text-base-200 bg-gray-900 hover:bg-gray-700 w-full mt-5 mb-2 border-none'
           />
         </form>
       </div>
