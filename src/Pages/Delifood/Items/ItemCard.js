@@ -5,7 +5,7 @@ const ItemCard = ({ item }) => {
   const { _id, img1, price, available, name } = item;
   return (
     // Background Image
-    <Link to={`/services/delifood/item/${_id}`}>
+    <Link to={`/projects/delifood/item/${_id}`}>
       <div
         key={_id}
         style={{

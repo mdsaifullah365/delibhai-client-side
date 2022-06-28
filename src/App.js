@@ -39,14 +39,14 @@ function App() {
           <Route path='manage-items' element={<Foods />} />
         </Route>
         <Route path='/admin-dashboard/login' element={<AdminLogin />}></Route>
-        <Route path='/services/delifood' element={<Delifood />}>
+        <Route path='/projects/delifood' element={<Delifood />}>
           <Route path=':category' element={<Items />} />
         </Route>
-        <Route path='/services/delifood/item/:id' element={<ItemDetails />} />
+        <Route path='/projects/delifood/item/:id' element={<ItemDetails />} />
         <Route path='/*' element={<PageNotFound />} />
       </Routes>
       {!path.includes('/admin-dashboard') &&
-        !path.includes('/services/delifood') && <Footer />}
+        !path.includes('/projects/delifood') && <Footer />}
 
       <ToastContainer />
     </>

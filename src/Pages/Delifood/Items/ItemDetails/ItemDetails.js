@@ -10,7 +10,7 @@ import SocialLinks from './SocialLinks/SocialLinks';
 
 const ItemDetails = () => {
   const { id } = useParams();
-  const url = `https://delibhai.herokuapp.com/services/delifood/item/${id}`;
+  const url = `https://delibhai.herokuapp.com/projects/delifood/item/${id}`;
   const { data: item, isLoading } = useQuery(['item', id], () =>
     fetch(url).then((res) => res.json())
   );

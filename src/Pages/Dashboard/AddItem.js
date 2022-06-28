@@ -90,7 +90,7 @@ const AddItem = () => {
                 };
                 axios
                   .post(
-                    `https://delibhai.herokuapp.com/services/delifood`,
+                    `https://delibhai.herokuapp.com/projects/delifood`,
                     Item
                   )
                   .then((data) => {
