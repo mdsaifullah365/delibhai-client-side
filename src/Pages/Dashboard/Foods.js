@@ -2,16 +2,25 @@ import React from 'react';
 import Loading from '../Shared/Loading';
 import { useQuery } from 'react-query';
 import ItemRow from './ItemRow';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 
 const Foods = () => {
-  const url = `https://delibhai.herokuapp.com/admin/delifood`;
+  const [user, loading] = useAuthState(auth);
+  const url = `https://delibhai.herokuapp.com/admin/delifood?email=${user?.email}`;
   const {
     data: items,
     isLoading,
     refetch,
-  } = useQuery('allItems', () => fetch(url).then((res) => res.json()));
+  } = useQuery('allItems', () =>
+    fetch(url, {
+      headers: {
+        authorization: `Bearer ${sessionStorage.getItem('adminAccessToken')}`,
+      },
+    }).then((res) => res.json())
+  );
 
-  if (isLoading) {
+  if (loading || isLoading) {
     return <Loading />;
   }
   return (
@@ -28,7 +37,12 @@ const Foods = () => {
         </thead>
         <tbody>
           {items.map((item) => (
-            <ItemRow key={item._id} item={item} refetch={refetch} />
+            <ItemRow
+              key={item._id}
+              item={item}
+              refetch={refetch}
+              email={user?.email}
+            />
           ))}
         </tbody>
       </table>

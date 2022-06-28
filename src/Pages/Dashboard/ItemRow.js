@@ -2,10 +2,10 @@ import React from 'react';
 import { RiDeleteBin6Fill } from 'react-icons/ri';
 import { BsToggle2Off, BsToggle2On } from 'react-icons/bs';
 import axios from 'axios';
-const ItemRow = ({ item, refetch }) => {
+const ItemRow = ({ item, refetch, email }) => {
   const { _id, name, available, description, img1, price, categories } = item;
   const handleAvailability = (id) => {
-    const url = `https://delibhai.herokuapp.com/admin/delifood/${id}`;
+    const url = `https://delibhai.herokuapp.com/admin/delifood/${id}?email=${email}`;
     axios.put(url).then((res) => {
       if (res.data.modifiedCount === 1) {
         refetch();
@@ -13,7 +13,7 @@ const ItemRow = ({ item, refetch }) => {
     });
   };
   const handleRemoveItem = (id) => {
-    const url = `https://delibhai.herokuapp.com/admin/delifood/${id}`;
+    const url = `https://delibhai.herokuapp.com/admin/delifood/${id}?email=${email}`;
     axios.delete(url).then((res) => {
       if (res.data.deletedCount === 1) {
         refetch();

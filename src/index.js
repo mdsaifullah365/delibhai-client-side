@@ -5,6 +5,11 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import axios from 'axios';
+
+axios.defaults.headers.common[
+  'authorization'
+] = `Bearer ${sessionStorage.getItem('adminAccessToken')}`;
 
 const queryClient = new QueryClient();
 const root = ReactDOM.createRoot(document.getElementById('root'));
