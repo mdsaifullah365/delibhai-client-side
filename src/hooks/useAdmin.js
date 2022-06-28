@@ -4,9 +4,9 @@ const useAdmin = (user) => {
   const [admin, setAdmin] = useState(false);
   const [adminLoading, setAdminLoading] = useState(true);
   useEffect(() => {
-    fetch(`https://rollabike.herokuapp.com/admin?email=${user?.email}`, {
+    fetch(`https://delibhai.herokuapp.com/isAdmin?email=${user?.email}`, {
       headers: {
-        authorization: `Bearer ${localStorage.getItem('accessToken')}`,
+        authorization: `Bearer ${localStorage.getItem('adminAccessToken')}`,
       },
     })
       .then((res) => res.json())

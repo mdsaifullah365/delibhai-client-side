@@ -1,22 +1,35 @@
-import React from "react";
-import { useAuthState } from "react-firebase-hooks/auth";
-import auth from "../../firebase.init";
-import useAdmin from "../../hooks/useAdmin";
-import Loading from "./Loading";
+import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { Navigate, useLocation } from 'react-router-dom';
+import auth from '../../firebase.init';
+import useAdmin from '../../hooks/useAdmin';
+import Loading from './Loading';
 
 const RequireAdmin = ({ children }) => {
+  let location = useLocation();
   const [user, loading] = useAuthState(auth);
   const [admin, adminLoading] = useAdmin(user);
 
+  if (!user) {
+    return (
+      <Navigate
+        to='/admin-dashboard/login'
+        state={{ from: location }}
+        replace
+      />
+    );
+  }
   if (loading || adminLoading) {
     return <Loading />;
   }
 
   if (!admin) {
     return (
-      <h2 className="text-3xl text-center font-bold mt-10 text-error">
-        Unauthorized Access
-      </h2>
+      <Navigate
+        to='/admin-dashboard/login'
+        state={{ from: location }}
+        replace
+      />
     );
   }
 

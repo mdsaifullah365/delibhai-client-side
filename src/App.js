@@ -15,6 +15,8 @@ import PageNotFound from './Pages/Shared/PageNotFound';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Foods from './Pages/Dashboard/Foods';
+import AdminLogin from './Pages/Dashboard/AdminLogin';
+import RequireAdmin from './Pages/Shared/RequireAdmin';
 
 function App() {
   const path = useLocation().pathname;
@@ -25,11 +27,18 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/login' element={<Login />} />
         <Route path='/registration' element={<Registration />} />
-        <Route path='/admin-dashboard' element={<Dashboard />}>
+        <Route
+          path='/admin-dashboard'
+          element={
+            <RequireAdmin>
+              <Dashboard />
+            </RequireAdmin>
+          }>
           <Route index element={<DashboardHome />} />
           <Route path='add-item' element={<AddItem />} />
           <Route path='manage-items' element={<Foods />} />
         </Route>
+        <Route path='/admin-dashboard/login' element={<AdminLogin />}></Route>
         <Route path='/services/delifood' element={<Delifood />}>
           <Route path=':category' element={<Items />} />
         </Route>
