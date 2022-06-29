@@ -39,7 +39,7 @@ function App() {
           <Route path='manage-items' element={<Foods />} />
         </Route>
         <Route path='/admin-dashboard/login' element={<AdminLogin />}></Route>
-        <Route path='/projects/delifood' element={<Delifood />}>
+        <Route path='/projects/delifood/menu' element={<Delifood />}>
           <Route path=':category' element={<Items />} />
         </Route>
         <Route path='/projects/delifood/item/:id' element={<ItemDetails />} />
