@@ -56,8 +56,15 @@ const ItemCarousel = ({ img1, img2, video, price, name }) => {
         loop={true}
         modules={[Autoplay, EffectCreative]}>
         <SwiperSlide>
-          <div className='relative w-full h-[54vw] lg:max-h-[calc(100vh-175px)]'>
-            <img className='w-full h-full' src={img1} alt='' />
+          <div
+            style={{
+              background: `url('${img1}')`,
+              backgroundRepeat: 'no-repeat',
+              backgroundPosition: 'center',
+              backgroundSize: 'cover',
+              backgroundOrigin: 'padding-box',
+            }}
+            className='relative w-full h-[54vw] lg:max-h-[calc(100vh-175px)]'>
             {/* Dark Overlay */}
             <div
               className={`absolute top-0 right-0 bottom-0 left-0 bg-gradient-to-t from-black to-transparent opacity-75`}></div>
@@ -73,8 +80,15 @@ const ItemCarousel = ({ img1, img2, video, price, name }) => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className='relative w-full h-[54vw] lg:max-h-[calc(100vh-175px)]'>
-            <img className='w-full h-full' src={img2} alt='' />
+          <div
+            style={{
+              background: `url('${img2}')`,
+              backgroundRepeat: 'no-repeat',
+              backgroundPosition: 'center',
+              backgroundSize: 'cover',
+              backgroundOrigin: 'padding-box',
+            }}
+            className='relative w-full h-[54vw] lg:max-h-[calc(100vh-175px)]'>
             {/* Dark Overlay */}
             <div
               className={`absolute top-0 right-0 bottom-0 left-0 bg-gradient-to-t from-black to-transparent opacity-75`}></div>
