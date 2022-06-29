@@ -11,7 +11,7 @@ const CustomMenu = ({ children, to, color, ...props }) => {
       className={`${
         match ? ' text-black shadow-xl' : ` text-white`
       } text-[15px] leading-[18px] px-3 py-[9px] rounded-full`}>
-      <Link className='' to={`/projects/delifood/${to}`} {...props}>
+      <Link className='' to={`/projects/delifood/menu/${to}`} {...props}>
         {children}
       </Link>
     </li>
