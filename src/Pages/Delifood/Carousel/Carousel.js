@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { AiFillClockCircle } from 'react-icons/ai';
 import { FaMapMarkerAlt } from 'react-icons/fa';
 import playstore from '../../../images/playsore.jpg';
+import app from '../../../files/delifood-App.apk';
 const Carousel = () => {
   const [slideIndex, setSlideIndex] = useState(1);
   const slides = useMemo(
@@ -19,7 +20,7 @@ const Carousel = () => {
       {
         id: 3,
         ad: 'ডাউনলোড করুন আমাদের মোবাইল এপস্',
-        app: '../../../files/delifood-App.apk',
+        app,
         time: 'ওপেনিং টাইম: সকাল ৯ টা থেকে রাত ১১ টা',
         location: 'কবির চৌধুরী মার্কেট, হেয়াকো বাজার, ভূজপুর, চট্টগ্রাম',
       },
