@@ -17,6 +17,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Foods from './Pages/Dashboard/Foods';
 import AdminLogin from './Pages/Dashboard/AdminLogin';
 import RequireAdmin from './Pages/Shared/RequireAdmin';
+import AddCategory from './Pages/Dashboard/AddCategory';
 
 function App() {
   const path = useLocation().pathname;
@@ -36,6 +37,7 @@ function App() {
           }>
           <Route index element={<DashboardHome />} />
           <Route path='add-item' element={<AddItem />} />
+          <Route path='add-category' element={<AddCategory />} />
           <Route path='manage-items' element={<Foods />} />
         </Route>
         <Route path='/admin-dashboard/login' element={<AdminLogin />}></Route>

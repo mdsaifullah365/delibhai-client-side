@@ -28,6 +28,7 @@ const Dashboard = () => {
         {/* Sidebar Menu */}
         <CustomLink to='/admin-dashboard'>Home</CustomLink>
         <CustomLink to='/admin-dashboard/add-item'>Add Item</CustomLink>
+        <CustomLink to='/admin-dashboard/add-category'>Add Category</CustomLink>
         <CustomLink to='/admin-dashboard/manage-items'>Manage Items</CustomLink>
 
         {/* Sidebar Footer */}
