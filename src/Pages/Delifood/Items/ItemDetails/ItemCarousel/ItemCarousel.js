@@ -37,7 +37,7 @@ const ItemCarousel = ({ img1, img2, video, price, name }) => {
   };
 
   return (
-    <div className="shadow-3xl rounded-b-[calc(2.66vw-0.13rem)] sm:rounded-b-[16.21px] mx-2 sm:mx-4 overflow-hidden  ">
+    <div className="rounded-md mx-2 sm:mx-4 overflow-hidden  ">
       <Swiper
         style={{
           '--swiper-navigation-color': '#ffffff',
