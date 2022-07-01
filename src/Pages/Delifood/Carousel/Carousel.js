@@ -62,13 +62,11 @@ const Carousel = () => {
               <div className="absolute right-0 top-0 left-0 bottom-0 w-full h-full text-[#2BFFCC] pt-[8vw] md:pt-5">
                 <div className="container font-noto text-[5.334vw] leading-[5.333vw] md:leading-normal font-bold">
                   <p className="mb-[6vw] md:mb-6">{slide.ad}</p>
-                  <a href={slide.app} download>
-                    <img
-                      src={playstore}
-                      alt=""
-                      className="block w-[32.176vw] rounded-[1.99vw]"
-                    />
-                  </a>
+                  <img
+                    src={playstore}
+                    alt=""
+                    className="block w-[32.176vw] rounded-[1.99vw]"
+                  />
                 </div>
               </div>
             )}
