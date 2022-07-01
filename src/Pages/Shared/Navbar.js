@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import CustomLink from "./CustomLink";
-import logo from "../../images/logo.png";
-import { useAuthState } from "react-firebase-hooks/auth";
-import auth from "../../firebase.init";
-import { signOut } from "firebase/auth";
-import { FiLogOut } from "react-icons/fi";
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import CustomLink from './CustomLink';
+import logo from '../../images/logo.png';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
+import { signOut } from 'firebase/auth';
+import { FiLogOut } from 'react-icons/fi';
 
 const Navbar = () => {
   // useAuthState
@@ -22,8 +22,8 @@ const Navbar = () => {
   // Log Out
   const logOut = () => {
     signOut(auth);
-    localStorage.removeItem("accessToken");
-    navigate("/", { replace: true });
+    localStorage.removeItem('accessToken');
+    navigate('/', { replace: true });
   };
 
   // Toggle dropdown
@@ -36,11 +36,17 @@ const Navbar = () => {
   // Nav Links
   const navLinks = (
     <>
-      <CustomLink onClick={toggleHamburgerDropdown} to={"/"}>
+      <CustomLink onClick={toggleHamburgerDropdown} to={'/'}>
         হোম পেইজ
       </CustomLink>
 
-      <CustomLink onClick={toggleHamburgerDropdown} to={"/about-us"}>
+      <CustomLink
+        onClick={toggleHamburgerDropdown}
+        to={'/projects/delifood/menu'}
+      >
+        ডেলিফুড মেন্যু
+      </CustomLink>
+      <CustomLink onClick={toggleHamburgerDropdown} to={'/about-us'}>
         আমাদের সম্পর্কে
       </CustomLink>
 
@@ -67,7 +73,7 @@ const Navbar = () => {
             <ul
               tabIndex="2"
               className={`${
-                avatarDropdown && "hidden"
+                avatarDropdown && 'hidden'
               } menu menu-compact dropdown-content mt-3  p-2 shadow bg-accent text-white rounded-box w-52 right-0`}
             >
               <div className="avatar mx-auto mt-2 mb-3">
@@ -94,7 +100,7 @@ const Navbar = () => {
               <br />
               <li className="ml-auto">
                 <button className="hover:text-primary" onClick={logOut}>
-                  লগআউট{" "}
+                  লগআউট{' '}
                   <span>
                     <FiLogOut />
                   </span>
@@ -105,13 +111,13 @@ const Navbar = () => {
         </>
       ) : (
         <>
-          <CustomLink onClick={toggleHamburgerDropdown} to={"/login"}>
+          <CustomLink onClick={toggleHamburgerDropdown} to={'/login'}>
             লগইন করুন
           </CustomLink>
 
           <Link
             onClick={toggleHamburgerDropdown}
-            to={"/registration"}
+            to={'/registration'}
             className="btn btn-primary text-base-100 mt-4 lg:mt-0 lg:ml-8"
           >
             রেজিস্ট্রেশন করুন
@@ -149,13 +155,13 @@ const Navbar = () => {
             <ul
               tabIndex="0"
               className={`${
-                hamburgerDropdown && "hidden"
+                hamburgerDropdown && 'hidden'
               } menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52`}
             >
               {navLinks}
             </ul>
           </div>
-          <Link to={"/"}>
+          <Link to={'/'}>
             <img src={logo} alt="deliBhai Logo" className="w-28 sm:w-44" />
           </Link>
         </div>
