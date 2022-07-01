@@ -35,9 +35,9 @@ const ItemCarousel = ({ img1, img2, video, price, name }) => {
   };
 
   return (
-    <div className='shadow-3xl rounded-b-[2.6666666vw] overflow-hidden  '>
+    <div className="shadow-3xl rounded-b-[calc(2.66vw-0.13rem)] sm:rounded-b-[16.21px] mx-2 sm:mx-4 overflow-hidden  ">
       <Swiper
-        className='mySwiper'
+        className="mySwiper"
         autoplay={{
           delay: 2000,
           // disableOnInteraction: true,
@@ -54,7 +54,8 @@ const ItemCarousel = ({ img1, img2, video, price, name }) => {
           },
         }}
         loop={true}
-        modules={[Autoplay, EffectCreative]}>
+        modules={[Autoplay, EffectCreative]}
+      >
         <SwiperSlide>
           <div
             style={{
@@ -64,16 +65,18 @@ const ItemCarousel = ({ img1, img2, video, price, name }) => {
               backgroundSize: 'cover',
               backgroundOrigin: 'padding-box',
             }}
-            className='relative w-full h-[54vw] lg:max-h-[calc(100vh-175px)]'>
+            className="relative w-full h-[calc(54vw-2.7rem)] sm:h-[328.32px]"
+          >
             {/* Dark Overlay */}
             <div
-              className={`absolute top-0 right-0 bottom-0 left-0 bg-gradient-to-t from-black to-transparent opacity-75`}></div>
+              className={`absolute top-0 right-0 bottom-0 left-0 bg-gradient-to-t from-black to-transparent opacity-75`}
+            ></div>
             {/* Price and Title */}
-            <div className='absolute right-0 bottom-[3.2vw] left-0 container'>
-              <p className='text-[#32FFCB] text-[6.4vw] leading-[8vw] font-bold'>
+            <div className="absolute right-0 bottom-0 py-[calc(3.2vw-0.16rem)] sm:py-[19.456px] px-[calc(5.333vw-0.2666rem)] sm:px-[32.42px] left-0">
+              <p className="text-[#32FFCB] text-[calc(6.4vw-0.32rem)] leading-[1.625] sm:text-[38.912px] font-bold">
                 ৳ {price} টাকা
               </p>
-              <p className='text-white text-[8.533333vw] leading-[13.866666vw] font-bold'>
+              <p className="text-white text-[calc(8.533333vw-0.4266rem)] leading-[1.625] sm:text-[51.88px] font-bold">
                 {name}
               </p>
             </div>
@@ -88,25 +91,27 @@ const ItemCarousel = ({ img1, img2, video, price, name }) => {
               backgroundSize: 'cover',
               backgroundOrigin: 'padding-box',
             }}
-            className='relative w-full h-[54vw] lg:max-h-[calc(100vh-175px)]'>
+            className="relative w-full h-[calc(54vw-2.7rem)] sm:h-[328.32px]"
+          >
             {/* Dark Overlay */}
             <div
-              className={`absolute top-0 right-0 bottom-0 left-0 bg-gradient-to-t from-black to-transparent opacity-75`}></div>
+              className={`absolute top-0 right-0 bottom-0 left-0 bg-gradient-to-t from-black to-transparent opacity-75`}
+            ></div>
             {/* Price and Title */}
-            <div className='absolute right-0 bottom-[3.2vw] left-0 container'>
-              <p className='text-[#32FFCB] text-[6.4vw] leading-[8vw] font-bold'>
+            <div className="absolute right-0 bottom-0 py-[calc(3.2vw-0.16rem)] sm:py-[19.456px] px-[calc(5.333vw-0.2666rem)] sm:px-[32.42px] left-0">
+              <p className="text-[#32FFCB] text-[calc(6.4vw-0.32rem)] leading-[1.625] sm:text-[38.912px] font-bold">
                 ৳ {price} টাকা
               </p>
-              <p className='text-white text-[8.533333vw] leading-[13.866666vw] font-bold'>
+              <p className="text-white text-[calc(8.533333vw-0.4266rem)] leading-[1.625] sm:text-[51.88px] font-bold">
                 {name}
               </p>
             </div>
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className='relative w-full h-[54vw] lg:max-h-[calc(100vh-175px)]'>
+          <div className="relative w-full h-[calc(54vw-2.7rem)] sm:h-[328.32px]">
             <YouTube
-              className='w-full h-full'
+              className="w-full h-full"
               videoId={id}
               opts={opts}
               onReady={onPlayerReady}
@@ -114,13 +119,17 @@ const ItemCarousel = ({ img1, img2, video, price, name }) => {
           </div>
           {/* Dark Overlay */}
           <div
-            className={`absolute h-[40%] right-0 bottom-0 left-0 opacity-0`}></div>
+            className={`absolute h-[40%] right-0 bottom-0 left-0 opacity-0`}
+          ></div>
           <div
-            className={`absolute h-[40%] right-0 top-0 left-0 opacity-0`}></div>
+            className={`absolute h-[40%] right-0 top-0 left-0 opacity-0`}
+          ></div>
           <div
-            className={`absolute w-[40%] right-0 top-0 bottom-0 opacity-0`}></div>
+            className={`absolute w-[40%] right-0 top-0 bottom-0 opacity-0`}
+          ></div>
           <div
-            className={`absolute w-[40%] left-0 top-0 bottom-0 opacity-0`}></div>
+            className={`absolute w-[40%] left-0 top-0 bottom-0 opacity-0`}
+          ></div>
         </SwiperSlide>
       </Swiper>
     </div>

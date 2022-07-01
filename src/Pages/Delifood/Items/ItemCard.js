@@ -1,11 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-const ItemCard = ({ item }) => {
+const ItemCard = ({ item, setItemModal }) => {
   const { _id, img1, price, available, name } = item;
   return (
-    // Background Image
-    <Link to={`/projects/delifood/item/${_id}`}>
+    <label
+      htmlFor="item-modal"
+      className="cursor-pointer"
+      onClick={() => setItemModal(item)}
+    >
+      {/* Background Image */}
       <div
         key={_id}
         style={{
@@ -47,7 +50,9 @@ const ItemCard = ({ item }) => {
           )}
         </div>
       </div>
-    </Link>
+    </label>
+
+    // {/* </Link> */}
   );
 };
 
