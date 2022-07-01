@@ -73,7 +73,7 @@ const ItemCarousel = ({ img1, img2, video, price, name }) => {
               backgroundSize: 'cover',
               backgroundOrigin: 'padding-box',
             }}
-            className="relative w-full h-[calc(54vw-2.7rem)] sm:h-[328.32px]"
+            className="relative w-full h-[calc(65vw-2.6rem)] sm:h-[395.2px]"
           ></div>
         </SwiperSlide>
         <SwiperSlide>
@@ -85,11 +85,11 @@ const ItemCarousel = ({ img1, img2, video, price, name }) => {
               backgroundSize: 'cover',
               backgroundOrigin: 'padding-box',
             }}
-            className="relative w-full h-[calc(54vw-2.7rem)] sm:h-[328.32px]"
+            className="relative w-full h-[calc(65vw-2.6rem)] sm:h-[395.2px]"
           ></div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="relative w-full h-[calc(54vw-2.7rem)] sm:h-[328.32px]">
+          <div className="relative w-full h-[calc(65vw-2.6rem)] sm:h-[395.2px]">
             <YouTube
               className="w-full h-full"
               videoId={id}
