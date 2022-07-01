@@ -29,7 +29,12 @@ const ItemModal = ({ item, setItemModal }) => {
             price={price}
             name={name}
           />
-          <ItemDescription description={description} />
+
+          <ItemDescription
+            description={description}
+            price={price}
+            name={name}
+          />
           <div className="absolute sm:static bottom-0 left-0 right-0 px-[calc(5.333vw-0.2666rem)] sm:px-[32.42px] bg-gradient-to-t from-white via-white pb-2 sm:pb-4">
             <SocialLinks />
             <OrderButton />
