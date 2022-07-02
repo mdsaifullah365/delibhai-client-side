@@ -24,7 +24,7 @@ const ItemCard = ({ item, setItemModal, gridView }) => {
         } bg-[#bebebe] rounded-xl sm:rounded-2xl`}>
         {/* Dark Overlay */}
         <div
-          className={`absolute top-0 right-0 bottom-0 left-0 rounded-xl sm:rounded-2xl bg-gradient-to-t from-black to-transparent opacity-75`}></div>
+          className={`absolute top-0 right-0 bottom-0 left-0 rounded-xl sm:rounded-2xl bg-gradient-to-t from-black via-transparent opacity-50`}></div>
         {/* Information */}
         <div className='flex flex-col justify-between items-center text-white h-full relative p-[1.3333333vw]'>
           <div className={`w-full flex justify-between`}>
