@@ -1,5 +1,4 @@
 import React from 'react';
-import app from '../../../../../assets/files/delifood-App.apk';
 import facebook from '../../../../../assets/images/social/facebook.svg';
 import youtube from '../../../../../assets/images/social/youtube.svg';
 import playstore from '../../../../../assets/images/social/playstore.png';
@@ -33,13 +32,13 @@ const SocialLinks = () => {
             alt=""
           />
         </a>
-        <a href={app} download>
+        <span>
           <img
             src={playstore}
             alt=""
             className="w-[calc(9.33333vw-0.4666rem)] sm:w-[56.7566px]"
           />
-        </a>
+        </span>
       </div>
     </div>
   );
