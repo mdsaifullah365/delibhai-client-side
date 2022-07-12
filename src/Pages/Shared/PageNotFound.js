@@ -1,5 +1,5 @@
-import React from "react";
-import error from "../../images/error.svg";
+import React from 'react';
+import error from '../../assets/images/error.svg';
 
 const PageNotFound = () => {
   return (
