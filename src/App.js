@@ -1,21 +1,21 @@
 import { Route, Routes, useLocation } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Home from './pages/Home';
-import Login from './pages/Login';
-import Registration from './pages/Registration';
-import Dashboard from './pages/Dashboard';
-import DashboardHome from './pages/Dashboard/Routes/DashboardHome';
-import AddItem from './pages/Dashboard/Routes/Delifood/AddItem';
-import AddCategory from './pages/Dashboard/Routes/Delifood/AddCategory';
-import Foods from './pages/Dashboard/Routes/Delifood';
-import Delifood from './pages/Delifood';
-import Items from './pages/Delifood/Items';
-import Footer from './pages/Shared/Footer';
-import Navbar from './pages/Shared/Navbar';
-import PageNotFound from './pages/Shared/PageNotFound';
-import AdminLogin from './pages/AdminLogin';
-import RequireAdmin from './pages/Shared/RequireAdmin';
+import Home from './Pages/Home';
+import Login from './Pages/Login';
+import Registration from './Pages/Registration';
+import Dashboard from './Pages/Dashboard';
+import DashboardHome from './Pages/Dashboard/Routes/DashboardHome';
+import AddItem from './Pages/Dashboard/Routes/Delifood/AddItem';
+import AddCategory from './Pages/Dashboard/Routes/Delifood/AddCategory';
+import Foods from './Pages/Dashboard/Routes/Delifood';
+import Delifood from './Pages/Delifood';
+import Items from './Pages/Delifood/Items';
+import Footer from './Pages/Shared/Footer';
+import Navbar from './Pages/Shared/Navbar';
+import PageNotFound from './Pages/Shared/PageNotFound';
+import AdminLogin from './Pages/AdminLogin';
+import RequireAdmin from './Pages/Shared/RequireAdmin';
 
 function App() {
   const path = useLocation().pathname;
