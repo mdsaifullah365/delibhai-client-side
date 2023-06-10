@@ -12,7 +12,7 @@ const Foods = () => {
   const [user, loading] = useAuthState(auth);
   const [removeModal, setRemoveModal] = useState(null);
   const [availabilityModal, setAvailabilityModal] = useState(null);
-  const url = `https://delibhai.herokuapp.com/admin/delifood?email=${user?.email}`;
+  const url = `https://victorious-gold-garment.cyclic.app/admin/delifood?email=${user?.email}`;
   const {
     data: items,
     isLoading,
@@ -29,9 +29,9 @@ const Foods = () => {
     return <Loading />;
   }
   return (
-    <div className="overflow-x-auto w-full">
-      <table className="table w-full">
-        <thead className="sticky top-0">
+    <div className='overflow-x-auto w-full'>
+      <table className='table w-full'>
+        <thead className='sticky top-0'>
           <tr>
             <th>নাম</th>
             <th>শর্ট ডিস্ক্রিপশন</th>

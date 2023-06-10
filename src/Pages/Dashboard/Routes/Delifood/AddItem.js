@@ -15,7 +15,7 @@ const AddItem = () => {
   // Load Categories
   const [menu, setMenu] = useState([]);
   useEffect(() => {
-    const url = `https://delibhai.herokuapp.com/delifood/category`;
+    const url = `https://victorious-gold-garment.cyclic.app/delifood/category`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setMenu(data));
@@ -90,7 +90,7 @@ const AddItem = () => {
                 };
                 axios
                   .post(
-                    `https://delibhai.herokuapp.com/projects/delifood`,
+                    `https://victorious-gold-garment.cyclic.app/projects/delifood`,
                     Item
                   )
                   .then((data) => {

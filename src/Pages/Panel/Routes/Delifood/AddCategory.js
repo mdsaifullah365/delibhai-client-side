@@ -38,7 +38,10 @@ const AddCategory = () => {
       color: colorCode.replace(/\s+/g, '').toLowerCase(),
     };
     axios
-      .post(`https://delibhai.herokuapp.com/delifood/category`, category)
+      .post(
+        `https://victorious-gold-garment.cyclic.app/delifood/category`,
+        category
+      )
       .then((res) => {
         toast.success('Category Added Successfully');
         reset();

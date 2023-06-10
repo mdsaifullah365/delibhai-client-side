@@ -5,11 +5,16 @@ const useAdmin = (user) => {
   const [adminLoading, setAdminLoading] = useState(true);
   useEffect(() => {
     if (user?.email) {
-      fetch(`https://delibhai.herokuapp.com/isAdmin?email=${user?.email}`, {
-        headers: {
-          authorization: `Bearer ${sessionStorage.getItem('adminAccessToken')}`,
-        },
-      })
+      fetch(
+        `https://victorious-gold-garment.cyclic.app/isAdmin?email=${user?.email}`,
+        {
+          headers: {
+            authorization: `Bearer ${sessionStorage.getItem(
+              'adminAccessToken'
+            )}`,
+          },
+        }
+      )
         .then((res) => res.json())
         .then((data) => {
           setAdmin(data.admin);
