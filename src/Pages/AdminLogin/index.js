@@ -4,7 +4,6 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { useForm } from 'react-hook-form';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import Loading from '../Shared/Loading';
 import auth from '../../firebase.init';
 import useAdminToken from '../../hooks/useAdminToken';
 
@@ -43,22 +42,26 @@ const AdminLogin = () => {
 
   // Loading
   if (loading) {
-    return <Loading />;
+    return (
+      <div className='min-h-[calc(100vh-64px)] flex justify-center items-center'>
+        <div className='w-24 h-24 border-b-2 border-accent rounded-full animate-spin'></div>
+      </div>
+    );
   }
 
   // Firebase Error
   let signInError;
   if (error) {
     signInError = (
-      <p className="text-center text-error mb-3">{error?.message}</p>
+      <p className='text-center text-error mb-3'>{error?.message}</p>
     );
   }
 
   return (
-    <div className="min-h-[calc(100vh-80px)] sm:min-h-[calc(100vh-96px)] flex justify-center items-center my-5">
-      <div className="flex flex-col w-full max-w-md shadow-2xl p-8">
+    <div className='min-h-[calc(100vh-80px)] sm:min-h-[calc(100vh-96px)] flex justify-center items-center my-5'>
+      <div className='flex flex-col w-full max-w-md shadow-2xl p-8'>
         {/* Title */}
-        <h2 className="text-center text-4xl font-semibold mb-10">
+        <h2 className='text-center text-4xl font-semibold mb-10'>
           Admin Login
         </h2>
 
@@ -68,34 +71,34 @@ const AdminLogin = () => {
         {/* Admin Login Form */}
         <form onSubmit={handleSubmit(onSubmit)}>
           {/* Email */}
-          <div className="form-control w-full mb-3">
+          <div className='form-control w-full mb-3'>
             <input
-              type="text"
-              placeholder="Admin Email"
-              className="input input-bordered w-full"
+              type='text'
+              placeholder='Admin Email'
+              className='input input-bordered w-full'
               {...register('email')}
             />
-            <p className="mt-2 text-sm text-error">{errors.email?.message}</p>
+            <p className='mt-2 text-sm text-error'>{errors.email?.message}</p>
           </div>
 
           {/* Password */}
-          <div className="form-control w-full">
+          <div className='form-control w-full'>
             <input
-              type="password"
-              placeholder="Admin Password"
-              className="input input-bordered w-full"
+              type='password'
+              placeholder='Admin Password'
+              className='input input-bordered w-full'
               {...register('password')}
             />
-            <p className="mt-2 text-sm text-error">
+            <p className='mt-2 text-sm text-error'>
               {errors.password?.message}
             </p>
           </div>
 
           {/* Submit */}
           <input
-            type="submit"
-            value="Login"
-            className="btn btn-primary text-base-200 bg-gray-900 hover:bg-gray-700 w-full mt-5 mb-2 border-none"
+            type='submit'
+            value='Login'
+            className='btn btn-primary text-base-200 bg-gray-900 hover:bg-gray-700 w-full mt-5 mb-2 border-none'
           />
         </form>
       </div>
