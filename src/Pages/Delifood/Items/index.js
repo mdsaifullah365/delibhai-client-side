@@ -23,9 +23,10 @@ const Items = ({ gridView }) => {
   } else {
     document.body.classList.remove('no-scroll');
   }
+  console.log(items);
   return (
     <div className='container'>
-      {items.length === 0 ? (
+      {items?.length === 0 || items === undefined ? (
         <div className='text-center text-2xl lg:text-4xl pt-4 pb-16'>
           No Items Found
         </div>
