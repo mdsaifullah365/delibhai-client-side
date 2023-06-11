@@ -4,7 +4,7 @@ const RemoveItemModal = ({ item, refetch, email, setRemoveModal }) => {
   const { _id, img1, name, price } = item;
   // Remove an Item
   const handleRemoveItem = (id) => {
-    const url = `https://victorious-gold-garment.cyclic.app/admin/delifood/${id}?email=${email}`;
+    const url = `https://delibhai.onrender.com/admin/delifood/${id}?email=${email}`;
     fetch(url, {
       method: 'DELETE',
       headers: {

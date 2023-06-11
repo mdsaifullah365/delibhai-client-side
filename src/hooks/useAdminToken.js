@@ -5,7 +5,7 @@ const useAdminToken = (user) => {
   const email = user?.user?.email;
   useEffect(() => {
     if (email) {
-      fetch(`https://victorious-gold-garment.cyclic.app/user/${email}`)
+      fetch(`https://delibhai.onrender.com/user/${email}`)
         .then((res) => res.json())
         .then((data) => {
           const accessToken = data.token;

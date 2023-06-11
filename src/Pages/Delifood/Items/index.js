@@ -11,7 +11,7 @@ const Items = ({ gridView }) => {
   const [itemModal, setItemModal] = useState(null);
   const location = useLocation();
   const path = location.pathname;
-  const url = `https://victorious-gold-garment.cyclic.app${path}`;
+  const url = `https://delibhai.onrender.com${path}`;
   const { data: items, isLoading } = useQuery(['items', path], () =>
     fetch(url).then((res) => res.json())
   );

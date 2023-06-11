@@ -15,7 +15,7 @@ const AddItem = () => {
   // Load Categories
   const [menu, setMenu] = useState([]);
   useEffect(() => {
-    const url = `https://victorious-gold-garment.cyclic.app/delifood/category`;
+    const url = `https://delibhai.onrender.com/delifood/category`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setMenu(data));
@@ -89,10 +89,7 @@ const AddItem = () => {
                   categories,
                 };
                 axios
-                  .post(
-                    `https://victorious-gold-garment.cyclic.app/projects/delifood`,
-                    Item
-                  )
+                  .post(`https://delibhai.onrender.com/projects/delifood`, Item)
                   .then((data) => {
                     console.log(data);
                     toast.success('Item Added Successfully');

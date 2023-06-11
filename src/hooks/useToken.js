@@ -23,7 +23,7 @@ const useToken = (user) => {
     };
 
     if (email) {
-      fetch(`https://victorious-gold-garment.cyclic.app/user/${email}`, {
+      fetch(`https://delibhai.onrender.com/user/${email}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

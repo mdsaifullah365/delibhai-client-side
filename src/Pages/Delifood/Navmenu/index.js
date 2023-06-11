@@ -4,7 +4,7 @@ import CustomMenu from './CustomMenu';
 import Loading from '../../Shared/Loading';
 
 const Navmenu = () => {
-  const url = `https://victorious-gold-garment.cyclic.app/delifood/category`;
+  const url = `https://delibhai.onrender.com/delifood/category`;
   const { data: menu, isLoading } = useQuery(['menu'], () =>
     fetch(url).then((res) => res.json())
   );

@@ -12,7 +12,7 @@ const Foods = () => {
   const [user, loading] = useAuthState(auth);
   const [removeModal, setRemoveModal] = useState(null);
   const [availabilityModal, setAvailabilityModal] = useState(null);
-  const url = `https://victorious-gold-garment.cyclic.app/admin/delifood?email=${user?.email}`;
+  const url = `https://delibhai.onrender.com/admin/delifood?email=${user?.email}`;
   const {
     data: items,
     isLoading,

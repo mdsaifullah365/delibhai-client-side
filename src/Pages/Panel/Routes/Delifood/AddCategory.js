@@ -38,10 +38,7 @@ const AddCategory = () => {
       color: colorCode.replace(/\s+/g, '').toLowerCase(),
     };
     axios
-      .post(
-        `https://victorious-gold-garment.cyclic.app/delifood/category`,
-        category
-      )
+      .post(`https://delibhai.onrender.com/delifood/category`, category)
       .then((res) => {
         toast.success('Category Added Successfully');
         reset();
