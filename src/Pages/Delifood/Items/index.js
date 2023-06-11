@@ -23,7 +23,7 @@ const Items = ({ gridView }) => {
   } else {
     document.body.classList.remove('no-scroll');
   }
-  console.log(items);
+
   return (
     <div className='container'>
       {items?.length === 0 || items === undefined ? (

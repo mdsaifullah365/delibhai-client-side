@@ -13,7 +13,6 @@ const useAdminToken = (user) => {
           setToken(accessToken);
         })
         .catch((err) => {
-          console.log(err);
           console.log(err.message);
         });
     }

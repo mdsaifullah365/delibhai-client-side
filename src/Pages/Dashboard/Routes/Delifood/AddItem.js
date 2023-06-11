@@ -23,7 +23,6 @@ const AddItem = () => {
 
   // Set Categories from Form Select Input
   const [categories, setCategories] = useState('');
-  console.log(categories);
   const handleSelectCategories = (categories) => {
     let value = '';
     categories.forEach((category) => {
@@ -91,7 +90,6 @@ const AddItem = () => {
                 axios
                   .post(`https://delibhai.onrender.com/projects/delifood`, Item)
                   .then((data) => {
-                    console.log(data);
                     toast.success('Item Added Successfully');
                     reset();
                     setLoading(false);
