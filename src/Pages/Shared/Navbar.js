@@ -42,6 +42,13 @@ const Navbar = () => {
 
       <CustomLink
         onClick={toggleHamburgerDropdown}
+        to={'https://dev-delibhai.netlify.app'}
+      >
+        নিউ ডেলিভাই
+      </CustomLink>
+
+      <CustomLink
+        onClick={toggleHamburgerDropdown}
         to={'/projects/delifood/menu'}
       >
         ডেলিফুড মেন্যু
