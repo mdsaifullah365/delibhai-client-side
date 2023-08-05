@@ -40,13 +40,6 @@ const Navbar = () => {
         হোম পেইজ
       </CustomLink>
 
-      <CustomLink
-        onClick={toggleHamburgerDropdown}
-        to={'https://dev-delibhai.netlify.app'}
-      >
-        নিউ ডেলিভাই
-      </CustomLink>
-
       <li className={`text-black bg-transparent text-sm`}>
         <a href='https://dev-delibhai.netlify.app'>
           নিউ ডেলিভাই
