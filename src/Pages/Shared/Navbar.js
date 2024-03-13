@@ -41,7 +41,7 @@ const Navbar = () => {
       </CustomLink>
 
       <li className={`text-black bg-transparent text-sm`}>
-        <a href='https://dev-delibhai.netlify.app'>
+        <a href='https://www.delibhai.com'>
           নিউ ডেলিভাই
         </a>
       </li>
